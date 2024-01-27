@@ -4,8 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #sposta {
+          position: absolute;
+          top: 50px;
+          left: 50px;
+          transition: all 0.3s ease;
+        }
+      </style>
 </head>
 <body>
+    <div>
+        <div>
+            <h1>Svegliatiiiiiiiiiiiiiiiiii!</h1>
+        </div>
+        <div>
+            <img src="https://media.giphy.com/media/mBj27oKelWrDpvyPk3/giphy.gif" alt="buonanotte">
+        </div>
+        <div>
+            <button onclick="paginaSveglia()"> Ora mi alzo!</button>
+            <button id="sposta">Ancora 5 minuti mamma!</button>
+        </div>
+    </div>
+
+    <script>
+        function paginaSveglia() {
+            window.location.href = "sveglia.html";
+             }
+
+        document.addEventListener("DOMContentLoaded", function() {
+          var button = document.getElementById("sposta");
     
+          button.addEventListener("mouseover", function() {
+            // Calcola una nuova posizione casuale
+            var newX = Math.random() * window.innerWidth;
+            var newY = Math.random() * window.innerHeight;
+    
+            // Imposta la nuova posizione
+            button.style.left = newX + "px";
+            button.style.top = newY + "px";
+          });
+        });
+      </script>
 </body>
 </html>
